@@ -1,0 +1,151 @@
+type Canvas {
+  id: ID!
+  clientId: String!
+  data: String!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelCanvasConnection {
+  items: [Canvas]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelCanvasFilterInput {
+  id: ModelIDInput
+  clientId: ModelStringInput
+  data: ModelStringInput
+  and: [ModelCanvasFilterInput]
+  or: [ModelCanvasFilterInput]
+  not: ModelCanvasFilterInput
+}
+
+type Query {
+  getCanvas(id: ID!): Canvas
+  listCanvass(filter: ModelCanvasFilterInput, limit: Int, nextToken: String): ModelCanvasConnection
+}
+
+input CreateCanvasInput {
+  id: ID
+  clientId: String!
+  data: String!
+}
+
+input UpdateCanvasInput {
+  id: ID!
+  clientId: String
+  data: String
+}
+
+input DeleteCanvasInput {
+  id: ID
+}
+
+type Mutation {
+  createCanvas(input: CreateCanvasInput!, condition: ModelCanvasConditionInput): Canvas
+  updateCanvas(input: UpdateCanvasInput!, condition: ModelCanvasConditionInput): Canvas
+  deleteCanvas(input: DeleteCanvasInput!, condition: ModelCanvasConditionInput): Canvas
+}
+
+input ModelCanvasConditionInput {
+  clientId: ModelStringInput
+  data: ModelStringInput
+  and: [ModelCanvasConditionInput]
+  or: [ModelCanvasConditionInput]
+  not: ModelCanvasConditionInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Subscription {
+  onCreateCanvas: Canvas @aws_subscribe(mutations: ["createCanvas"])
+  onUpdateCanvas: Canvas @aws_subscribe(mutations: ["updateCanvas"])
+  onDeleteCanvas: Canvas @aws_subscribe(mutations: ["deleteCanvas"])
+}

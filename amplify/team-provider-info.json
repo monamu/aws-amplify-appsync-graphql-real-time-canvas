@@ -1,0 +1,15 @@
+{
+    "devhashi": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-react-draw-devhashi-185532-authRole",
+            "UnauthRoleArn": "arn:aws:iam::136954720073:role/amplify-react-draw-devhashi-185532-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::136954720073:role/amplify-react-draw-devhashi-185532-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-react-draw-devhashi-185532-deployment",
+            "UnauthRoleName": "amplify-react-draw-devhashi-185532-unauthRole",
+            "StackName": "amplify-react-draw-devhashi-185532",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:136954720073:stack/amplify-react-draw-devhashi-185532/85f31dc0-afb7-11ea-aa53-0ebe0d3228ae",
+            "AmplifyAppId": "d1km4k1e5zase6"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-react-draw-devhashi-185532-authRole",
+			"UnauthRoleArn": "arn:aws:iam::136954720073:role/amplify-react-draw-devhashi-185532-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::136954720073:role/amplify-react-draw-devhashi-185532-authRole",
+			"Region": "ap-northeast-1",
+			"DeploymentBucketName": "amplify-react-draw-devhashi-185532-deployment",
+			"UnauthRoleName": "amplify-react-draw-devhashi-185532-unauthRole",
+			"StackName": "amplify-react-draw-devhashi-185532",
+			"StackId": "arn:aws:cloudformation:ap-northeast-1:136954720073:stack/amplify-react-draw-devhashi-185532/85f31dc0-afb7-11ea-aa53-0ebe0d3228ae",
+			"AmplifyAppId": "d1km4k1e5zase6"
+		}
+	},
+	"api": {
+		"reactdraw": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "gnlkwzsgjzen5iy4xk3fvukcp4",
+				"GraphQLAPIEndpointOutput": "https://k75vqhktsfayva5hcffm6omcfm.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-ws6gnvutgvgnxibl2uone3yfbu"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-react-draw-devhashi-185532-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apireactdraw"
+			},
+			"lastPushTimeStamp": "2020-06-16T10:19:07.872Z",
+			"lastPushDirHash": "S4MYaeMZiZ1iedlGY8YAOKUt5MY="
+		}
+	}
+}

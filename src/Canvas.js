@@ -54,7 +54,7 @@ class Demo extends Component {
       })
     window.addEventListener('mouseup', (e) => {
       // If we are clicking on a button, do not update anything
-      if (e.target.name === 'clearbutton') return 
+      if (e.target.name === 'clearbutton') return
       this.setState({
         brushColor: rand()
       })
@@ -79,6 +79,7 @@ class Demo extends Component {
       .subscribe({
         next: (d) => {
           const data = JSON.parse(d.value.data.onUpdateCanvas.data)
+          console.log(data);
           const length = data.lines.length
           if (length === 0) {
             // If there is no canvas data, clear the canvas
